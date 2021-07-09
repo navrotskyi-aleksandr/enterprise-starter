@@ -1,0 +1,57 @@
+resources:
+  repositories:
+  - repository: self
+    clean: true
+    fetchDepth: 1
+  - repository: templates
+    type: git
+    name: Platform/Infrastructure
+    ref: refs/tags/1.26.0
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - "*"
+    - ci/portal-publish.yml
+    exclude:
+    - ci/*
+
+variables:
+- group: ci-global
+- name: disable.coverage.autogenerate
+  value: 'true'
+
+pool:
+  vmImage: $(ados_default_agent)
+
+stages:
+- stage: build_and_publish
+  displayName: Build and publish
+  jobs:
+  - job: build_and_test
+    displayName: Build, test and publish
+    steps:
+    - template: ci/template/build/universal-node-build-and-test.yml@templates
+      parameters:
+        published_projects:
+        - cree-portal
+        reportgenerator_file_filters: '+*;-**/src/app/components/editor/ckeditor5/build/webpack*'
+
+- stage: approve_artifacts_for_dev
+  displayName: Approve artifacts for dev
+  dependsOn:
+  - build_and_publish
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  variables:
+  - group: ci-dev
+  jobs:
+  - job: set_ready_for_environment
+    displayName: Set "ready for dev environment"
+    steps:
+    - task: CmdLine@2
+      displayName: Set build tag
+      inputs:
+        script: echo "##vso[build.addbuildtag]$(environment)"

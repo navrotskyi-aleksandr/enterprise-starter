@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/cree/shared/ui-pipes",
+  "sourceRoot": "libs/cree/shared/ui-pipes/src",
+  "prefix": "portal",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cree/shared/ui-pipes"],
+      "options": {
+        "jestConfig": "libs/cree/shared/ui-pipes/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/cree/shared/ui-pipes/src/**/*.ts", "libs/cree/shared/ui-pipes/src/**/*.html"]
+      }
+    }
+  },
+  "tags": ["type:ui", "scope:shared"]
+}

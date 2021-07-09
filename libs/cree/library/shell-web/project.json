@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/cree/library/shell-web",
+  "sourceRoot": "libs/cree/library/shell-web/src",
+  "prefix": "portal",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cree/library/shell-web"],
+      "options": {
+        "jestConfig": "libs/cree/library/shell-web/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/cree/library/shell-web/src/**/*.ts", "libs/cree/library/shell-web/src/**/*.html"]
+      }
+    }
+  },
+  "tags": ["type:shell", "scope:library"]
+}

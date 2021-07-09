@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@portal/cree/core/desktop-layout": ["libs/cree/core/desktop-layout/src/index.ts"],
+      "@portal/cree/core/mobile-layout": ["libs/cree/core/mobile-layout/src/index.ts"],
+      "@portal/cree/core/web-layout": ["libs/cree/core/web-layout/src/index.ts"],
+      "@portal/cree/courses/data-access": ["libs/cree/courses/data-access/src/index.ts"],
+      "@portal/cree/courses/feature": ["libs/cree/courses/feature/src/index.ts"],
+      "@portal/cree/courses/shell-web": ["libs/cree/courses/shell-web/src/index.ts"],
+      "@portal/cree/home/feature": ["libs/cree/home/feature/src/index.ts"],
+      "@portal/cree/home/shell-desktop": ["libs/cree/home/shell-desktop/src/index.ts"],
+      "@portal/cree/home/shell-mobile": ["libs/cree/home/shell-mobile/src/index.ts"],
+      "@portal/cree/home/shell-web": ["libs/cree/home/shell-web/src/index.ts"],
+      "@portal/cree/library/feature": ["libs/cree/library/feature/src/index.ts"],
+      "@portal/cree/library/shell-web": ["libs/cree/library/shell-web/src/index.ts"],
+      "@portal/cree/page-not-found/feature": ["libs/cree/page-not-found/feature/src/index.ts"],
+      "@portal/cree/page-not-found/shell-web": ["libs/cree/page-not-found/shell-web/src/index.ts"],
+      "@portal/cree/shared/ui-components": ["libs/cree/shared/ui-components/src/index.ts"],
+      "@portal/cree/shared/ui-icons": ["libs/cree/shared/ui-icons/src/index.ts"],
+      "@portal/cree/shared/ui-pipes": ["libs/cree/shared/ui-pipes/src/index.ts"],
+      "@portal/cree/user-profile/feature": ["libs/cree/user-profile/feature/src/index.ts"],
+      "@portal/cree/user-profile/shell-web": ["libs/cree/user-profile/shell-web/src/index.ts"],
+      "@portal/cree/workspace/feature": ["libs/cree/workspace/feature/src/index.ts"],
+      "@portal/cree/workspace/shell-web": ["libs/cree/workspace/shell-web/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

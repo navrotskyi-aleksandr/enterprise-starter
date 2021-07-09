@@ -1,0 +1,67 @@
+{
+  "version": 2,
+  "projects": {
+    "cree-core-desktop-layout": "libs/cree/core/desktop-layout",
+    "cree-core-mobile-layout": "libs/cree/core/mobile-layout",
+    "cree-core-web-layout": "libs/cree/core/web-layout",
+    "cree-courses-data-access": "libs/cree/courses/data-access",
+    "cree-courses-feature": "libs/cree/courses/feature",
+    "cree-courses-shell-web": "libs/cree/courses/shell-web",
+    "cree-desktop": "apps/cree-desktop",
+    "cree-home-feature": "libs/cree/home/feature",
+    "cree-home-shell-desktop": "libs/cree/home/shell-desktop",
+    "cree-home-shell-mobile": "libs/cree/home/shell-mobile",
+    "cree-home-shell-web": "libs/cree/home/shell-web",
+    "cree-library-feature": "libs/cree/library/feature",
+    "cree-library-shell-web": "libs/cree/library/shell-web",
+    "cree-mobile": "apps/cree-mobile",
+    "cree-page-not-found-feature": "libs/cree/page-not-found/feature",
+    "cree-page-not-found-shell-web": "libs/cree/page-not-found/shell-web",
+    "cree-shared-ui-components": "libs/cree/shared/ui-components",
+    "cree-shared-ui-icons": "libs/cree/shared/ui-icons",
+    "cree-shared-ui-pipes": "libs/cree/shared/ui-pipes",
+    "cree-user-profile-feature": "libs/cree/user-profile/feature",
+    "cree-user-profile-shell-web": "libs/cree/user-profile/shell-web",
+    "cree-web": "apps/cree-web",
+    "cree-workspace-feature": "libs/cree/workspace/feature",
+    "cree-workspace-shell-web": "libs/cree/workspace/shell-web"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush"
+    },
+    "@schematics/angular": {
+      "component": {
+        "style": "scss",
+        "changeDetection": "OnPush"
+      }
+    }
+  },
+  "defaultProject": "cree-web"
+}

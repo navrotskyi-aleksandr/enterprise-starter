@@ -1,0 +1,25 @@
+resources:
+  repositories:
+  - repository: self
+    clean: true
+    fetchDepth: 1
+  - repository: templates
+    type: git
+    name: Platform/Infrastructure
+    ref: refs/tags/1.26.0
+
+trigger: none
+
+variables:
+- group: ci-global
+- name: disable.coverage.autogenerate
+  value: 'true'
+
+pool:
+  vmImage: $(ados_default_agent)
+
+jobs:
+- job: prv
+  displayName: PR validation
+  steps:
+  - template: ci/template/build/universal-node-build-and-test.yml@templates

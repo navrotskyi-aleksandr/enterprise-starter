@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cree/user-profile/feature",
+  "sourceRoot": "libs/cree/user-profile/feature/src",
+  "prefix": "portal",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cree/user-profile/feature"],
+      "options": {
+        "jestConfig": "libs/cree/user-profile/feature/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cree/user-profile/feature/src/**/*.ts",
+          "libs/cree/user-profile/feature/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["type:feature", "scope:user-profile"]
+}

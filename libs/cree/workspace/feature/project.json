@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/cree/workspace/feature",
+  "sourceRoot": "libs/cree/workspace/feature/src",
+  "prefix": "portal",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cree/workspace/feature"],
+      "options": {
+        "jestConfig": "libs/cree/workspace/feature/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/cree/workspace/feature/src/**/*.ts", "libs/cree/workspace/feature/src/**/*.html"]
+      }
+    }
+  },
+  "tags": ["type:feature", "scope:workspace"]
+}

@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/cree/home/shell-mobile",
+  "sourceRoot": "libs/cree/home/shell-mobile/src",
+  "prefix": "portal",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cree/home/shell-mobile"],
+      "options": {
+        "jestConfig": "libs/cree/home/shell-mobile/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/cree/home/shell-mobile/src/**/*.ts", "libs/cree/home/shell-mobile/src/**/*.html"]
+      }
+    }
+  },
+  "tags": ["type:shell", "scope:home"]
+}

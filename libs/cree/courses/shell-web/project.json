@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/cree/courses/shell-web",
+  "sourceRoot": "libs/cree/courses/shell-web/src",
+  "prefix": "portal",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cree/courses/shell-web"],
+      "options": {
+        "jestConfig": "libs/cree/courses/shell-web/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/cree/courses/shell-web/src/**/*.ts", "libs/cree/courses/shell-web/src/**/*.html"]
+      }
+    }
+  },
+  "tags": ["type:shell", "scope:courses"]
+}

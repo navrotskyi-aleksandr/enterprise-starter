@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/cree/courses/data-access",
+  "sourceRoot": "libs/cree/courses/data-access/src",
+  "prefix": "portal",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cree/courses/data-access"],
+      "options": {
+        "jestConfig": "libs/cree/courses/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/cree/courses/data-access/src/**/*.ts", "libs/cree/courses/data-access/src/**/*.html"]
+      }
+    }
+  },
+  "tags": ["type:data-access", "scope:courses"]
+}

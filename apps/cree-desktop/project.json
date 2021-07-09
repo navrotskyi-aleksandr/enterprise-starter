@@ -1,0 +1,88 @@
+{
+  "projectType": "application",
+  "root": "apps/cree-desktop",
+  "sourceRoot": "apps/cree-desktop/src",
+  "prefix": "portal",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/cree-desktop",
+        "index": "apps/cree-desktop/src/index.html",
+        "main": "apps/cree-desktop/src/main.ts",
+        "polyfills": "apps/cree-desktop/src/polyfills.ts",
+        "tsConfig": "apps/cree-desktop/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/cree-desktop/src/favicon.ico", "apps/cree-desktop/src/assets"],
+        "styles": ["apps/cree-desktop/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/cree-desktop/src/environments/environment.ts",
+              "with": "apps/cree-desktop/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "cree-desktop:build:production"
+        },
+        "development": {
+          "browserTarget": "cree-desktop:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "cree-desktop:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/cree-desktop/src/**/*.ts", "apps/cree-desktop/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/cree-desktop"],
+      "options": {
+        "jestConfig": "apps/cree-desktop/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:app", "platform:desktop"]
+}
